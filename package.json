@@ -1,0 +1,13 @@
+{
+	"name": "gtranslate-chain",
+	"version": "0.0.1",
+	"description": "Translate a string into another language, then another, then another, then...",
+	"main": "index.js",
+	"author": "Ryan Chan <me@chanrycz.com> (https://chanrycz.com)",
+	"license": "MIT",
+	"dependencies": {
+		"@translate-tools/core": "^0.2.10",
+		"prompt-sync": "^4.2.0"
+	},
+	"type": "module"
+}
