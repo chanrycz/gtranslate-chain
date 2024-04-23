@@ -1,11 +1,11 @@
-import { GoogleTranslator } from "@translate-tools/core/translators/GoogleTranslator/index.js";
+import { GoogleTranslator } from '@translate-tools/core/translators/GoogleTranslator/index.js';
 import promptSync from "prompt-sync";
 
 const prompt = promptSync({ sigint: true });
 
 const translator = new GoogleTranslator({
 	headers: {
-		"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/94.0.4606.81 Safari/537.36",
+		"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/124.0.0.0 Safari/537.36",
 	},
 });
 
@@ -23,11 +23,10 @@ async function main() {
 			currentTranslation = translate;
 
 			await translator.translate(currentTranslation, langs[i], langs[0]).then((back_translate) => {
-				console.log(`${langs[i]}: ${translate}`);
-				console.log(`${langs[0]}: ${back_translate}\n`); // Remove \n if adding countdown
+				console.log(`${langs[i]}: ${translate} (${langs[0]}: ${back_translate})`);
 
 				// Countdown
-				// console.log(`${i}/${langs.length} (${langs.length - i} left)\n`);
+				// console.log(`\n${i}/${langs.length} (${langs.length - i} left)\n`);
 			});
 		});
 	}
